@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="anchorHome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="905.0" styleClass="imagem_fundo" stylesheets="@rhspotter_software.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hotmail.milenacararoo.rhspotter.controllers.HomeController">
+   <children>
+      <ImageView fitHeight="536.0" fitWidth="905.0" pickOnBounds="true" preserveRatio="true" styleClass="imagem_fundo" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@fundo.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutY="267.0" prefHeight="355.0" prefWidth="905.0" AnchorPane.bottomAnchor="-91.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" layoutX="-1.0" layoutY="94.0" prefHeight="348.0" prefWidth="910.0" style="-fx-background-color: transparent;" styleClass="menu_preto" AnchorPane.bottomAnchor="94.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="94.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="44.0" prefWidth="449.0" style="-fx-background-color: transparent;" styleClass="panel_branco">
+                     <children>
+                        <AnchorPane maxHeight="169.0" maxWidth="203.0" minHeight="169.0" minWidth="203.0" prefHeight="169.0" prefWidth="203.0">
+                           <children>
+                              <Label layoutX="83.0" layoutY="66.0" prefHeight="38.0" prefWidth="33.0" text="" textFill="WHITE">
+                                 <font>
+                                    <Font name="GLYPHICONS Halflings Regular" size="32.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="btnPararRobo" layoutX="74.0" layoutY="50.0" onMouseDragged="#pararRobo" prefHeight="68.0" prefWidth="57.0" text="" textFill="WHITE">
+                                 <font>
+                                    <Font name="GLYPHICONS Halflings Regular" size="57.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                              <Label fx:id="btnGiraParaDireitaRobo" layoutX="129.0" layoutY="51.0" onMouseClicked="#giraParaDiretaRobo" text="" textFill="WHITE">
+                                 <font>
+                                    <Font name="GLYPHICONS Halflings Regular" size="57.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                              <Label fx:id="btnGiraParaEsquerdaRobo" layoutX="14.0" layoutY="53.0" onMouseClicked="#giraParaEsquerdaRobo" rotate="180.0" text="" textFill="WHITE">
+                                 <font>
+                                    <Font name="GLYPHICONS Halflings Regular" size="57.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                              <Label fx:id="btnMoveParaTrasRobo" layoutX="74.0" layoutY="104.0" onMouseClicked="#moveParaTrasRobo" text="" textFill="WHITE">
+                                 <font>
+                                    <Font name="GLYPHICONS Halflings Regular" size="57.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                              <Label fx:id="btnMoveParaFrenteRobo" layoutX="74.0" layoutY="-5.0" onMouseClicked="#moveParaFrenteRobo" text="" textFill="WHITE">
+                                 <font>
+                                    <Font name="GLYPHICONS Halflings Regular" size="57.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="769.0" layoutY="1.0" prefHeight="533.0" prefWidth="197.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.rightAnchor="-61.0" AnchorPane.topAnchor="1.0">
+         <children>
+            <HBox alignment="CENTER" layoutX="-1.0" layoutY="94.0" prefHeight="348.0" prefWidth="910.0" style="-fx-background-color: transparent;" styleClass="menu_preto" AnchorPane.bottomAnchor="94.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="94.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="255.0" prefWidth="237.0" style="-fx-background-color: transparent;" styleClass="panel_branco">
+                     <children>
+                        <AnchorPane maxHeight="169.0" maxWidth="203.0" minHeight="169.0" minWidth="121.0" prefHeight="169.0" prefWidth="137.0">
+                           <children>
+                              <Label fx:id="btnCapturaImagens" layoutX="74.0" layoutY="50.0" onMouseClicked="#tiraFoto" onMousePressed="#gravaVideo" text="" textFill="WHITE">
+                                 <font>
+                                    <Font name="GLYPHICONS Halflings Regular" size="57.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                              <Label fx:id="btnMoveParaBaixoCamera" layoutX="74.0" layoutY="104.0" onMouseClicked="#moveParaBaixoCamera" text="" textFill="WHITE">
+                                 <font>
+                                    <Font name="GLYPHICONS Halflings Regular" size="57.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                              <Label fx:id="btnMoveParaCimaCamera" layoutX="74.0" layoutY="-5.0" onMouseClicked="#moveParaCimaCamera" text="" textFill="WHITE">
+                                 <font>
+                                    <Font name="GLYPHICONS Halflings Regular" size="57.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="btnAbrirMenuInicial" onMouseClicked="#abrirMenuInicial" prefHeight="533.0" prefWidth="29.0" styleClass="botao_fechar" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <BorderPane layoutX="-4.0" prefHeight="536.0" prefWidth="35.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-4.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <center>
+                  <Label contentDisplay="CENTER" text="" textFill="#089eee" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font name="GLYPHICONS Halflings Regular" size="29.0" />
+                     </font>
+                  </Label>
+               </center>
+            </BorderPane>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </AnchorPane>
+      <AnchorPane fx:id="panelMenuInicial" prefHeight="536.0" prefWidth="203.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane fx:id="panelMenu" prefHeight="536.0" prefWidth="169.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane prefHeight="51.0" prefWidth="168.0" styleClass="menu_preto">
+                     <children>
+                        <Label layoutX="14.0" layoutY="8.0" text="" textFill="#089eee">
+                           <font>
+                              <Font name="GLYPHICONS Halflings Regular" size="29.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="46.0" layoutY="9.0" text=" Menu" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI" size="27.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="482.0" prefWidth="151.0" styleClass="panel_branco" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="51.0">
+                     <children>
+                        <AnchorPane fx:id="btnAbrirMenuGaleria" onMouseClicked="#abrirMenuGaleria" prefHeight="59.0" prefWidth="169.0">
+                           <children>
+                              <Label layoutX="12.0" layoutY="8.0" text=" Galeria">
+                                 <graphic>
+                                    <Label text="">
+                                       <font>
+                                          <Font name="GLYPHICONS Halflings Regular" size="31.0" />
+                                       </font>
+                                    </Label>
+                                 </graphic>
+                                 <font>
+                                    <Font name="Segoe UI" size="27.0" />
+                                 </font>
+                              </Label>
+                              <Pane layoutY="55.0" prefHeight="4.0" prefWidth="169.0" styleClass="separador-menu" />
+                           </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </AnchorPane>
+                        <AnchorPane layoutY="311.0" prefHeight="92.0" prefWidth="168.0" AnchorPane.bottomAnchor="82.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0">
+                           <children>
+                              <Pane layoutX="-1.0" layoutY="12.0" prefHeight="4.0" prefWidth="169.0" styleClass="separador-menu" />
+                              <Label layoutX="14.0" layoutY="14.0" text="Lanterna">
+                                 <font>
+                                    <Font name="Segoe UI" size="27.0" />
+                                 </font>
+                                 <graphic>
+                                    <Label text="">
+                                       <font>
+                                          <Font name="GLYPHICONS Halflings Regular" size="31.0" />
+                                       </font>
+                                    </Label>
+                                 </graphic>
+                              </Label>
+                              <Pane layoutX="3.0" layoutY="54.0" prefHeight="30.0" prefWidth="158.0" styleClass="panel-fundo-botao">
+                                 <children>
+                                    <Button fx:id="btnDesativarLanterna" mnemonicParsing="false" onMouseClicked="#desativarLanterna" prefHeight="29.0" prefWidth="79.0" styleClass="botao-desativo" text="Desativar" textFill="WHITE" visible="false">
+                                       <font>
+                                          <Font name="Segoe UI" size="14.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Button fx:id="btnAtivarLanterna" layoutX="79.0" mnemonicParsing="false" onMouseClicked="#ativarLanterna" prefHeight="29.0" prefWidth="79.0" styleClass="botao-ativo" text="Ativar" textFill="WHITE">
+                                       <font>
+                                          <Font name="Segoe UI" size="14.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </Pane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="1.0" layoutY="393.0" prefHeight="92.0" prefWidth="168.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <Pane layoutX="-1.0" layoutY="12.0" prefHeight="4.0" prefWidth="169.0" styleClass="separador-menu" />
+                              <Label layoutX="14.0" layoutY="14.0" text=" Câmera">
+                                 <font>
+                                    <Font name="Segoe UI" size="27.0" />
+                                 </font>
+                                 <graphic>
+                                    <Label text="">
+                                       <font>
+                                          <Font name="GLYPHICONS Halflings Regular" size="31.0" />
+                                       </font>
+                                    </Label>
+                                 </graphic>
+                              </Label>
+                              <Pane layoutX="3.0" layoutY="54.0" prefHeight="30.0" prefWidth="158.0" styleClass="panel-fundo-botao">
+                                 <children>
+                                    <Button fx:id="btnDesativarCamera" mnemonicParsing="false" onMouseClicked="#desativarCamera" prefHeight="29.0" prefWidth="79.0" styleClass="botao-desativo" text="Desativar" textFill="WHITE">
+                                       <font>
+                                          <Font name="Segoe UI" size="14.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Button fx:id="btnAtivarCamera" layoutX="79.0" mnemonicParsing="false" onMouseClicked="#ativarCamera" prefHeight="29.0" prefWidth="79.0" styleClass="botao-ativo" text="Ativar" textFill="WHITE" visible="false">
+                                       <font>
+                                          <Font name="Segoe UI" size="14.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </Pane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="btnFecharMenuInicial" onMouseClicked="#fecharMenuInicial" prefHeight="536.0" prefWidth="33.0" styleClass="botao_fechar" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="169.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <BorderPane layoutX="-1.0" prefHeight="536.0" prefWidth="35.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+                     <center>
+                        <Label contentDisplay="CENTER" text="" textFill="#089eee" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font name="GLYPHICONS Halflings Regular" size="29.0" />
+                           </font>
+                        </Label>
+                     </center>
+                     <left>
+                        <Pane prefHeight="325.0" prefWidth="4.0" styleClass="separador-menu" BorderPane.alignment="CENTER" />
+                     </left>
+                  </BorderPane>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="panelMenuGaleria" prefHeight="536.0" prefWidth="236.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="51.0" prefWidth="235.0" styleClass="menu_preto">
+               <children>
+                  <Label layoutX="8.0" layoutY="7.0" text="Galeria" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI" size="27.0" />
+                     </font>
+                     <graphic>
+                        <Label text="" textFill="WHITE">
+                           <font>
+                              <Font name="GLYPHICONS Halflings Regular" size="31.0" />
+                           </font>
+                        </Label>
+                     </graphic>
+                  </Label>
+                  <Label fx:id="btnFecharMenuGaleria" layoutX="206.0" layoutY="10.0" onMouseClicked="#fecharMenuGaleria" text="" textFill="#f22c53">
+                     <font>
+                        <Font name="GLYPHICONS Halflings Regular" size="27.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="485.0" prefWidth="235.0" styleClass="panel_branco" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="51.0">
+               <children>
+                  <AnchorPane fx:id="btnAbrirPanelFotos" onMouseClicked="#abrirPanelFotos" prefHeight="38.0" prefWidth="118.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="1.0" text="Fotos">
+                           <font>
+                              <Font name="GLYPHICONS Halflings Regular" size="25.0" />
+                           </font>
+                           <graphic>
+                              <Label text="">
+                                 <font>
+                                    <Font name="GLYPHICONS Halflings Regular" size="25.0" />
+                                 </font>
+                              </Label>
+                           </graphic>
+                        </Label>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane fx:id="btnAbrirPanelVideos" layoutX="118.0" onMouseClicked="#abrirPanelVideos" prefHeight="38.0" prefWidth="118.0">
+                     <children>
+                        <Label layoutX="7.0" layoutY="2.0" text="Vídeos">
+                           <font>
+                              <Font name="GLYPHICONS Halflings Regular" size="25.0" />
+                           </font>
+                           <graphic>
+                              <Label text="">
+                                 <font>
+                                    <Font name="GLYPHICONS Halflings Regular" size="25.0" />
+                                 </font>
+                              </Label>
+                           </graphic>
+                        </Label>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane fx:id="panelVideos" layoutY="39.0" prefHeight="445.0" prefWidth="235.0" styleClass="panel_branco" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="39.0">
+                     <children>
+                        <ScrollBar layoutX="222.0" layoutY="4.0" orientation="VERTICAL" prefHeight="442.0" prefWidth="14.0" styleClass="menu_preto" AnchorPane.bottomAnchor="-1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="4.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ScrollBar>
+                        <AnchorPane layoutX="33.0" layoutY="14.0" prefHeight="120.0" prefWidth="158.0">
+                           <children>
+                              <ImageView fitHeight="119.0" fitWidth="178.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-0.3333282470703125" AnchorPane.rightAnchor="0.3333282470703125" AnchorPane.topAnchor="1.0">
+                                 <image>
+                                    <Image url="@img.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Pane layoutX="44.0" layoutY="89.0" prefHeight="31.0" prefWidth="71.0" AnchorPane.bottomAnchor="0.0">
+                                 <children>
+                                    <Button fx:id="btnVisualizaVideo" layoutY="1.0" mnemonicParsing="false" onMouseClicked="#visualizaVideo" prefHeight="29.0" prefWidth="33.0" styleClass="botao-play" text="" textFill="WHITE">
+                                       <font>
+                                          <Font name="GLYPHICONS Halflings Regular" size="13.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="btnExcluiVideo" layoutX="34.0" layoutY="1.0" mnemonicParsing="false" onMouseClicked="#excluiVideo" prefHeight="29.0" prefWidth="33.0" styleClass="botao-excluir" text="" textFill="WHITE">
+                                       <font>
+                                          <Font name="GLYPHICONS Halflings Regular" size="13.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Pane>
+                           </children>
+                        </AnchorPane>
+                        <Pane layoutX="118.0" prefHeight="4.0" prefWidth="118.0" styleClass="separador-azul" AnchorPane.leftAnchor="118.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="panelFotos" layoutY="39.0" prefHeight="445.0" prefWidth="236.0" styleClass="panel_branco" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="39.0">
+                     <children>
+                        <ScrollBar layoutX="221.0" layoutY="4.0" orientation="VERTICAL" prefHeight="442.0" prefWidth="14.0" styleClass="menu_preto" AnchorPane.bottomAnchor="-1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="4.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ScrollBar>
+                        <AnchorPane layoutX="33.0" layoutY="14.0" prefHeight="120.0" prefWidth="158.0">
+                           <children>
+                              <ImageView fitHeight="119.0" fitWidth="178.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-0.3333282470703125" AnchorPane.rightAnchor="0.3333282470703125" AnchorPane.topAnchor="1.0">
+                                 <image>
+                                    <Image url="@img.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Pane layoutX="44.0" layoutY="89.0" prefHeight="31.0" prefWidth="71.0" AnchorPane.bottomAnchor="0.0">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <children>
+                                    <Button fx:id="btnVisualizaImagem" layoutY="1.0" mnemonicParsing="false" onMouseClicked="#visualizaImagem" prefHeight="29.0" prefWidth="33.0" styleClass="botao-play" text="" textFill="WHITE">
+                                       <font>
+                                          <Font name="GLYPHICONS Halflings Regular" size="13.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="btnExcluiImagem" layoutX="34.0" layoutY="1.0" mnemonicParsing="false" onMouseClicked="#excluiImagem" prefHeight="29.0" prefWidth="33.0" styleClass="botao-excluir" text="" textFill="WHITE">
+                                       <font>
+                                          <Font name="GLYPHICONS Halflings Regular" size="13.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </AnchorPane>
+                        <Pane prefHeight="4.0" prefWidth="118.0" styleClass="separador-azul" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="panelVisualizaImagem" layoutX="420.0" layoutY="97.0" prefHeight="533.0" prefWidth="905.0" styleClass="menu_preto" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" layoutX="-1.0" layoutY="94.0" prefHeight="348.0" prefWidth="910.0" AnchorPane.bottomAnchor="94.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="94.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="428.0" prefWidth="464.0" style="-fx-background-color: transparent;" styleClass="panel_branco">
+                     <children>
+                        <ImageView fx:id="imagemGrande" fitHeight="348.0" fitWidth="464.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <AnchorPane fx:id="btnFecharPanelImagem" layoutX="862.0" onMouseClicked="#fecharPanelImagem" prefHeight="43.0" prefWidth="47.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="6.0" text="" textFill="WHITE">
+                     <font>
+                        <Font name="GLYPHICONS Halflings Regular" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="panelVisualizaVideo" layoutX="-1.0" prefHeight="533.0" prefWidth="905.0" styleClass="menu_preto" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" layoutX="-1.0" layoutY="94.0" prefHeight="348.0" prefWidth="910.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="94.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="94.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="428.0" prefWidth="464.0" style="-fx-background-color: transparent;" styleClass="panel_branco">
+                     <children>
+                        <ImageView fx:id="imagemGrande1" fitHeight="348.0" fitWidth="464.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <AnchorPane fx:id="btnFecharPanelVideo" layoutX="862.0" onMouseClicked="#fecharPanelVideo" prefHeight="43.0" prefWidth="47.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="6.0" text="" textFill="WHITE">
+                     <font>
+                        <Font name="GLYPHICONS Halflings Regular" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
