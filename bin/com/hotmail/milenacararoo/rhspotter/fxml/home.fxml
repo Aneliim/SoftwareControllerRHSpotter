@@ -10,13 +10,127 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="anchorHome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="905.0" styleClass="imagem_fundo" stylesheets="@rhspotter_software.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hotmail.milenacararoo.rhspotter.controllers.HomeController">
+<AnchorPane fx:id="anchorHome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="905.0" styleClass="menu_preto" stylesheets="@rhspotter_software.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hotmail.milenacararoo.rhspotter.controllers.HomeController">
    <children>
-      <ImageView fitHeight="536.0" fitWidth="905.0" pickOnBounds="true" preserveRatio="true" styleClass="imagem_fundo" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="panelImagenDesativado" layoutX="10.0" layoutY="10.0" prefHeight="533.0" prefWidth="905.0" styleClass="menu_preto" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" layoutX="-1.0" layoutY="94.0" prefHeight="348.0" prefWidth="910.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="94.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="94.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="348.0" prefWidth="423.0" style="-fx-background-color: transparent;" styleClass="panel_branco">
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="1.0" layoutY="14.0" text="Envio de imagens desativado." textFill="#4bbbfc">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="30.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <ImageView fx:id="imagemFundo" fitHeight="533.0" fitWidth="922.0" pickOnBounds="true" preserveRatio="true" styleClass="imagem_fundo" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-17.0" AnchorPane.topAnchor="0.0">
          <image>
-            <Image url="@fundo.png" />
+            <Image url="@fundo3.png" />
          </image>
       </ImageView>
+      <AnchorPane fx:id="balaoMenu" layoutX="36.0" layoutY="40.0" prefHeight="275.0" prefWidth="236.0" AnchorPane.topAnchor="-19.0">
+         <children>
+            <Label layoutX="13.0" layoutY="15.0" prefHeight="248.0" prefWidth="210.0" text="(" textFill="#000000a7">
+               <font>
+                  <Font name="Carr Balloons" size="220.0" />
+               </font>
+            </Label>
+            <Label layoutX="25.0" layoutY="64.0" text="Clique no botão na " textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="21.0" layoutY="92.0" text="vertical para acessar" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="27.0" layoutY="121.0" text="opções de ajustes e" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="44.0" layoutY="149.0" text="ativar a lanterna." textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="balaoLocomocaoRobo" layoutX="382.0" layoutY="178.0" prefHeight="357.0" prefWidth="523.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label layoutX="13.0" layoutY="15.0" prefHeight="248.0" prefWidth="210.0" text="(" textFill="#000000a8">
+               <font>
+                  <Font name="Carr Balloons" size="210.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="74.0" text="Para fazer o robô" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="16.0" layoutY="102.0" text="RHSpotter se mover" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="24.0" layoutY="132.0" text="utilize esses botões." textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="balaoCamera" layoutX="625.0" layoutY="-31.0" prefHeight="275.0" prefWidth="236.0" AnchorPane.rightAnchor="25.0">
+         <children>
+            <Label layoutX="13.0" layoutY="15.0" prefHeight="248.0" prefWidth="210.0" text="+" textFill="#000000a8">
+               <font>
+                  <Font name="Carr Balloons" size="250.0" />
+               </font>
+            </Label>
+            <Label layoutX="38.0" layoutY="56.0" text="Mova a câmera com " textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="38.0" layoutY="153.0" text=" e pressione a mesma" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="33.0" layoutY="104.0" text="para tirar fotos clique " textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="18.0" layoutY="128.0" text="sobre o icone de câmera" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="41.0" layoutY="80.0" text="os botões de flecha,  " textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="90.0" layoutY="177.0" text="para filmar." textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      
       <AnchorPane layoutY="267.0" prefHeight="355.0" prefWidth="905.0" AnchorPane.bottomAnchor="-91.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <HBox alignment="CENTER" layoutX="-1.0" layoutY="94.0" prefHeight="348.0" prefWidth="910.0" style="-fx-background-color: transparent;" styleClass="menu_preto" AnchorPane.bottomAnchor="94.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="94.0">
@@ -30,7 +144,7 @@
                                     <Font name="GLYPHICONS Halflings Regular" size="32.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="btnPararRobo" layoutX="74.0" layoutY="50.0" onMouseDragged="#pararRobo" prefHeight="68.0" prefWidth="57.0" text="" textFill="WHITE">
+                              <Label fx:id="btnPararRobo" layoutX="74.0" layoutY="50.0" onKeyPressed="#btnPararPressed" onKeyReleased="#btnPararReleased" onKeyTyped="#btnPararTyped" onMouseDragged="#pararRobo" prefHeight="68.0" prefWidth="57.0" text="" textFill="WHITE">
                                  <font>
                                     <Font name="GLYPHICONS Halflings Regular" size="57.0" />
                                  </font>
@@ -38,7 +152,7 @@
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </Label>
-                              <Label fx:id="btnGiraParaDireitaRobo" layoutX="129.0" layoutY="51.0" onMouseClicked="#giraParaDiretaRobo" text="" textFill="WHITE">
+                              <Label fx:id="btnGiraParaDireitaRobo" layoutX="129.0" layoutY="51.0" onKeyPressed="#giraParaDireitaPressed" onKeyReleased="#giraParaDireitaReleased" onKeyTyped="#giraParaDireitaTyped" onMouseClicked="#giraParaDiretaRobo" text="" textFill="WHITE">
                                  <font>
                                     <Font name="GLYPHICONS Halflings Regular" size="57.0" />
                                  </font>
@@ -46,7 +160,7 @@
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </Label>
-                              <Label fx:id="btnGiraParaEsquerdaRobo" layoutX="14.0" layoutY="53.0" onMouseClicked="#giraParaEsquerdaRobo" rotate="180.0" text="" textFill="WHITE">
+                              <Label fx:id="btnGiraParaEsquerdaRobo" layoutX="14.0" layoutY="53.0" onKeyPressed="#giraParaEsquerdaPressed" onKeyReleased="#giraParaEsquerdaReleased" onKeyTyped="#giraParaEsquerdaTyped" onMouseClicked="#giraParaEsquerdaRobo" rotate="180.0" text="" textFill="WHITE">
                                  <font>
                                     <Font name="GLYPHICONS Halflings Regular" size="57.0" />
                                  </font>
@@ -54,7 +168,7 @@
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </Label>
-                              <Label fx:id="btnMoveParaTrasRobo" layoutX="74.0" layoutY="104.0" onMouseClicked="#moveParaTrasRobo" text="" textFill="WHITE">
+                              <Label fx:id="btnMoveParaTrasRobo" layoutX="74.0" layoutY="104.0" onKeyPressed="#moveParaTrasPressed" onKeyReleased="#moveParaTrasReleased" onKeyTyped="#moveParaTrasTyped" onMouseClicked="#moveParaTrasRobo" text="" textFill="WHITE">
                                  <font>
                                     <Font name="GLYPHICONS Halflings Regular" size="57.0" />
                                  </font>
@@ -62,7 +176,7 @@
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </Label>
-                              <Label fx:id="btnMoveParaFrenteRobo" layoutX="74.0" layoutY="-5.0" onMouseClicked="#moveParaFrenteRobo" text="" textFill="WHITE">
+                              <Label fx:id="btnMoveParaFrenteRobo" layoutX="74.0" layoutY="-5.0" onKeyPressed="#moveParaFrentePressed" onKeyReleased="#moveParaFrenterReleased" onKeyTyped="#moveParaFrenteTyped" onMouseClicked="#moveParaFrenteRobo" text="" textFill="WHITE">
                                  <font>
                                     <Font name="GLYPHICONS Halflings Regular" size="57.0" />
                                  </font>
@@ -78,6 +192,7 @@
             </HBox>
          </children>
       </AnchorPane>
+      
       <AnchorPane layoutX="769.0" layoutY="1.0" prefHeight="533.0" prefWidth="197.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.rightAnchor="-61.0" AnchorPane.topAnchor="1.0">
          <children>
             <HBox alignment="CENTER" layoutX="-1.0" layoutY="94.0" prefHeight="348.0" prefWidth="910.0" style="-fx-background-color: transparent;" styleClass="menu_preto" AnchorPane.bottomAnchor="94.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="94.0">
@@ -86,7 +201,7 @@
                      <children>
                         <AnchorPane maxHeight="169.0" maxWidth="203.0" minHeight="169.0" minWidth="121.0" prefHeight="169.0" prefWidth="137.0">
                            <children>
-                              <Label fx:id="btnCapturaImagens" layoutX="74.0" layoutY="50.0" onMouseClicked="#tiraFoto" onMousePressed="#gravaVideo" text="" textFill="WHITE">
+                              <Label fx:id="btnCapturaImagens" layoutX="74.0" layoutY="50.0" onKeyPressed="#capturaImagensPressed" onKeyReleased="#capturaImagensReleased" onKeyTyped="#capturaImagensTyped" onMouseClicked="#tiraFoto" onMousePressed="#gravaVideo" text="" textFill="WHITE">
                                  <font>
                                     <Font name="GLYPHICONS Halflings Regular" size="57.0" />
                                  </font>
@@ -94,7 +209,7 @@
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </Label>
-                              <Label fx:id="btnMoveParaBaixoCamera" layoutX="74.0" layoutY="104.0" onMouseClicked="#moveParaBaixoCamera" text="" textFill="WHITE">
+                              <Label fx:id="btnMoveParaBaixoCamera" layoutX="74.0" layoutY="104.0" onKeyPressed="#moveParaBaixoPressed" onKeyReleased="#moveParaBaixoReleased" onKeyTyped="#moveParaBaixoTyped" onMouseClicked="#moveParaBaixoCamera" text="" textFill="WHITE">
                                  <font>
                                     <Font name="GLYPHICONS Halflings Regular" size="57.0" />
                                  </font>
@@ -102,7 +217,7 @@
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </Label>
-                              <Label fx:id="btnMoveParaCimaCamera" layoutX="74.0" layoutY="-5.0" onMouseClicked="#moveParaCimaCamera" text="" textFill="WHITE">
+                              <Label fx:id="btnMoveParaCimaCamera" layoutX="74.0" layoutY="-5.0" onKeyPressed="#moveParaCimaPressed" onKeyReleased="#moveParaCimaReleased" onKeyTyped="#moveParaCimaTyped" onMouseClicked="#moveParaCimaCamera" text="" textFill="WHITE">
                                  <font>
                                     <Font name="GLYPHICONS Halflings Regular" size="57.0" />
                                  </font>
@@ -154,7 +269,7 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="482.0" prefWidth="151.0" styleClass="panel_branco" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="51.0">
                      <children>
-                        <AnchorPane fx:id="btnAbrirMenuGaleria" onMouseClicked="#abrirMenuGaleria" prefHeight="59.0" prefWidth="169.0">
+                        <AnchorPane fx:id="btnAbrirMenuGaleria" onMouseClicked="#abrirMenuGaleria" prefHeight="59.0" prefWidth="169.0" visible="false">
                            <children>
                               <Label layoutX="12.0" layoutY="8.0" text=" Galeria">
                                  <graphic>
@@ -174,9 +289,8 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </AnchorPane>
-                        <AnchorPane layoutY="311.0" prefHeight="92.0" prefWidth="168.0" AnchorPane.bottomAnchor="82.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0">
+                        <AnchorPane layoutY="-15.0" prefHeight="92.0" prefWidth="169.0" AnchorPane.bottomAnchor="405.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="-15.0">
                            <children>
-                              <Pane layoutX="-1.0" layoutY="12.0" prefHeight="4.0" prefWidth="169.0" styleClass="separador-menu" />
                               <Label layoutX="14.0" layoutY="14.0" text="Lanterna">
                                  <font>
                                     <Font name="Segoe UI" size="27.0" />
@@ -214,9 +328,9 @@
                               </Pane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane layoutX="1.0" layoutY="393.0" prefHeight="92.0" prefWidth="168.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0">
+                        <AnchorPane layoutX="2.0" layoutY="68.0" prefHeight="86.0" prefWidth="169.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="68.0">
                            <children>
-                              <Pane layoutX="-1.0" layoutY="12.0" prefHeight="4.0" prefWidth="169.0" styleClass="separador-menu" />
+                              <Pane layoutX="-1.0" layoutY="10.0" prefHeight="4.0" prefWidth="169.0" styleClass="separador-menu" />
                               <Label layoutX="14.0" layoutY="14.0" text=" Câmera">
                                  <font>
                                     <Font name="Segoe UI" size="27.0" />
@@ -252,6 +366,47 @@
                                     <Cursor fx:constant="DEFAULT" />
                                  </cursor>
                               </Pane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="2.0" layoutY="150.0" prefHeight="92.0" prefWidth="168.0" AnchorPane.topAnchor="150.0">
+                           <children>
+                              <Pane layoutX="-1.0" layoutY="12.0" prefHeight="4.0" prefWidth="169.0" styleClass="separador-menu" />
+                              <Label layoutX="5.0" layoutY="16.0" text="Instruções">
+                                 <font>
+                                    <Font name="Segoe UI" size="27.0" />
+                                 </font>
+                                 <graphic>
+                                    <Label text="">
+                                       <font>
+                                          <Font name="GLYPHICONS Halflings Regular" size="31.0" />
+                                       </font>
+                                    </Label>
+                                 </graphic>
+                              </Label>
+                              <Pane layoutX="3.0" layoutY="54.0" prefHeight="30.0" prefWidth="158.0" styleClass="panel-fundo-botao">
+                                 <children>
+                                    <Button fx:id="btnDesativarInstrucao" mnemonicParsing="false" onMouseClicked="#desativarInstrucao" prefHeight="29.0" prefWidth="79.0" styleClass="botao-desativo" text="Desativar" textFill="WHITE">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <font>
+                                          <Font name="Segoe UI" size="14.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="btnAtivarInstrucao" layoutX="79.0" mnemonicParsing="false" onMouseClicked="#ativarInstrucao" prefHeight="29.0" prefWidth="79.0" styleClass="botao-ativo" text="Ativar" textFill="WHITE" visible="false">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <font>
+                                          <Font name="Segoe UI" size="14.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </Pane>
+                              <Pane layoutX="-2.0" layoutY="92.0" prefHeight="4.0" prefWidth="169.0" styleClass="separador-menu" />
                            </children>
                         </AnchorPane>
                      </children>
@@ -366,7 +521,7 @@
                                           <Font name="GLYPHICONS Halflings Regular" size="13.0" />
                                        </font>
                                     </Button>
-                                    <Button fx:id="btnExcluiVideo" layoutX="34.0" layoutY="1.0" mnemonicParsing="false" onMouseClicked="#excluiVideo" prefHeight="29.0" prefWidth="33.0" styleClass="botao-excluir" text="" textFill="WHITE">
+                                    <Button fx:id="btnExcluirVideo" layoutX="34.0" layoutY="1.0" mnemonicParsing="false" onMouseClicked="#excluirVideo" prefHeight="29.0" prefWidth="33.0" styleClass="botao-excluir" text="" textFill="WHITE">
                                        <font>
                                           <Font name="GLYPHICONS Halflings Regular" size="13.0" />
                                        </font>
@@ -381,7 +536,7 @@
                         <Pane layoutX="118.0" prefHeight="4.0" prefWidth="118.0" styleClass="separador-azul" AnchorPane.leftAnchor="118.0" AnchorPane.topAnchor="0.0" />
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="panelFotos" layoutY="39.0" prefHeight="445.0" prefWidth="236.0" styleClass="panel_branco" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="39.0">
+                  <AnchorPane fx:id="panelFotos" layoutY="39.0" prefHeight="445.0" prefWidth="236.0" styleClass="panel_branco" visible="false" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="39.0">
                      <children>
                         <ScrollBar layoutX="221.0" layoutY="4.0" orientation="VERTICAL" prefHeight="442.0" prefWidth="14.0" styleClass="menu_preto" AnchorPane.bottomAnchor="-1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="4.0">
                            <cursor>
@@ -405,7 +560,7 @@
                                           <Font name="GLYPHICONS Halflings Regular" size="13.0" />
                                        </font>
                                     </Button>
-                                    <Button fx:id="btnExcluiImagem" layoutX="34.0" layoutY="1.0" mnemonicParsing="false" onMouseClicked="#excluiImagem" prefHeight="29.0" prefWidth="33.0" styleClass="botao-excluir" text="" textFill="WHITE">
+                                    <Button fx:id="btnExcluirImagem" layoutX="34.0" layoutY="1.0" mnemonicParsing="false" onMouseClicked="#excluirImagem" prefHeight="29.0" prefWidth="33.0" styleClass="botao-excluir" text="" textFill="WHITE">
                                        <font>
                                           <Font name="GLYPHICONS Halflings Regular" size="13.0" />
                                        </font>
@@ -456,11 +611,24 @@
                <children>
                   <VBox alignment="CENTER" prefHeight="428.0" prefWidth="464.0" style="-fx-background-color: transparent;" styleClass="panel_branco">
                      <children>
-                        <ImageView fx:id="imagemGrande1" fitHeight="348.0" fitWidth="464.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@img.jpg" />
-                           </image>
-                        </ImageView>
+                        <AnchorPane prefHeight="23.0" prefWidth="464.0">
+                           <children>
+                              <ImageView fx:id="imagemGrande1" fitHeight="348.0" fitWidth="464.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img.jpg" />
+                                 </image>
+                              </ImageView>
+                              <AnchorPane layoutX="-3.0" layoutY="-2.0" prefHeight="348.0" prefWidth="464.0">
+                                 <children>
+                                    <Label layoutX="157.0" layoutY="85.0" text="" textFill="WHITE">
+                                       <font>
+                                          <Font name="GLYPHICONS Halflings Regular" size="150.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
                      </children>
                   </VBox>
                </children>
@@ -477,6 +645,153 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="panelRelizandoComunicacao" prefHeight="533.0" prefWidth="905.0" styleClass="menu_preto" visible="false" AnchorPane.bottomAnchor="-3.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" layoutX="-1.0" layoutY="94.0" prefHeight="348.0" prefWidth="910.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="94.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="94.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="348.0" prefWidth="423.0" style="-fx-background-color: transparent;" styleClass="panel_branco">
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="panel_branco">
+                           <children>
+                              <Label layoutX="125.0" layoutY="48.0" text="robô RHSpotter...">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="21.0" />
+                                 </font></Label>
+                              <AnchorPane layoutX="300.0" layoutY="94.0" prefHeight="105.0" prefWidth="47.0" styleClass="panel_branco" />
+                              <ImageView fitHeight="145.0" fitWidth="197.0" layoutX="117.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@RheX-transparente.gif" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="66.0" layoutY="21.0" text="Realizando comunicação com">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="21.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="panelErro" layoutX="10.0" layoutY="10.0" prefHeight="533.0" prefWidth="905.0" styleClass="menu_preto" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" layoutX="-1.0" layoutY="94.0" prefHeight="348.0" prefWidth="910.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="94.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="94.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="239.0" prefWidth="501.0" style="-fx-background-color: transparent;" styleClass="panel_branco">
+                     <children>
+                        <AnchorPane prefHeight="160.0" prefWidth="501.0" styleClass="panel_branco">
+                           <children>
+                              <AnchorPane layoutX="300.0" layoutY="94.0" prefHeight="105.0" prefWidth="47.0" styleClass="panel_branco" />
+                              <Label layoutX="87.0" layoutY="73.0" text="Não foi possível realizar a comunicação.">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="11.0" layoutY="61.0" text="" textFill="#fc4141">
+                                 <font>
+                                    <Font name="GLYPHICONS Halflings Regular" size="65.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="86.0" layoutY="100.0" text="Conecte a antena no seu despositivo.">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="21.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="panelExcluirImagem" layoutX="10.0" layoutY="10.0" prefHeight="533.0" prefWidth="905.0" styleClass="menu_preto" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" layoutX="-1.0" layoutY="94.0" prefHeight="348.0" prefWidth="910.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="94.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="94.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="239.0" prefWidth="501.0" style="-fx-background-color: transparent;" styleClass="panel_branco">
+                     <children>
+                        <AnchorPane prefHeight="160.0" prefWidth="501.0" styleClass="panel_branco">
+                           <children>
+                              <Label layoutX="87.0" layoutY="55.0" text="Deseja realmente excluir essa imagem?">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="30.0" text="">
+                                 <font>
+                                    <Font name="GLYPHICONS Halflings Regular" size="65.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btnExcluirImagemSim" layoutX="155.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#excluirImagemSim" prefHeight="29.0" prefWidth="79.0" styleClass="botao-ativo" text="SIM" textFill="WHITE">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <font>
+                                    <Font name="Segoe UI" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnExcluirImagemNao" layoutX="280.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#excluirImagemNao" prefHeight="29.0" prefWidth="79.0" styleClass="botao-desativo" text="NÃO" textFill="WHITE">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <font>
+                                    <Font name="Segoe UI" size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="panelExcluirVideo" layoutX="10.0" layoutY="10.0" prefHeight="533.0" prefWidth="905.0" styleClass="menu_preto" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" layoutX="-1.0" layoutY="94.0" prefHeight="348.0" prefWidth="910.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="94.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="94.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="239.0" prefWidth="501.0" style="-fx-background-color: transparent;" styleClass="panel_branco">
+                     <children>
+                        <AnchorPane prefHeight="160.0" prefWidth="501.0" styleClass="panel_branco">
+                           <children>
+                              <Label layoutX="87.0" layoutY="55.0" text="Deseja realmente excluir esse vídeo?">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="30.0" text="">
+                                 <font>
+                                    <Font name="GLYPHICONS Halflings Regular" size="65.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btnExcluirVideoSim" layoutX="155.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#excluirVideoSim" prefHeight="29.0" prefWidth="79.0" styleClass="botao-ativo" text="SIM" textFill="WHITE">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <font>
+                                    <Font name="Segoe UI" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnExcluirVideoNao" layoutX="280.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#excluirVideoNao" prefHeight="29.0" prefWidth="79.0" styleClass="botao-desativo" text="NÃO" textFill="WHITE">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <font>
+                                    <Font name="Segoe UI" size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
          </children>
       </AnchorPane>
    </children>

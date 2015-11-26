@@ -76,3 +76,7 @@
 	-fx-background-color: 		black;
 }
 /***********************************************************************/
+				/*FUNDO SEM IMAGEM*/
+.fundo-sem-imagem{
+	-fx-background-color: 		#000000b5;
+}
