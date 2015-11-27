@@ -7,6 +7,21 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
 public class HomeController {
+	/**---------------------------------------------------------------------------------------------
+	 * 											Tela realizando comunicação com o robô
+	 * */
+	@FXML
+	AnchorPane panelRelizandoComunicacao;
+	public void realizandoComunicacao(){
+		panelRelizandoComunicacao.setVisible(true);
+	}
+	//														Tela erro na comunicação
+	@FXML
+	AnchorPane panelErro;
+	public void erroComunicacao(){
+		panelErro.setVisible(true);
+	}
+	//-----------------------------------------------------------------------------------------------
 	/**********************************************************************
 	 * 										MENU INICIAL
 	 ***********************************************************************/
