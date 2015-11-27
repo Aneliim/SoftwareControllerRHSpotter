@@ -12,7 +12,28 @@
 
 <AnchorPane fx:id="anchorHome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="905.0" styleClass="menu_preto" stylesheets="@rhspotter_software.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hotmail.milenacararoo.rhspotter.controllers.HomeController">
    <children>
-      <AnchorPane fx:id="panelImagenDesativado" layoutX="10.0" layoutY="10.0" prefHeight="533.0" prefWidth="905.0" styleClass="menu_preto" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="panelCameraDesconectada" layoutX="10.0" layoutY="10.0" prefHeight="533.0" prefWidth="905.0" styleClass="menu_preto" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" layoutX="-1.0" layoutY="94.0" prefHeight="348.0" prefWidth="910.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="94.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="94.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="348.0" prefWidth="423.0" style="-fx-background-color: transparent;" styleClass="panel_branco">
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="1.0" layoutY="14.0" text="A câmera não está conectada." textFill="#fa4b5a">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="30.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="panelImagenDesativado" layoutX="10.0" layoutY="10.0" prefHeight="533.0" prefWidth="905.0" styleClass="menu_preto" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <HBox alignment="CENTER" layoutX="-1.0" layoutY="94.0" prefHeight="348.0" prefWidth="910.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="94.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="94.0">
                <children>
@@ -33,7 +54,7 @@
             </HBox>
          </children>
       </AnchorPane>
-      <ImageView fx:id="imagemFundo" fitHeight="533.0" fitWidth="922.0" pickOnBounds="true" preserveRatio="true" styleClass="imagem_fundo" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-17.0" AnchorPane.topAnchor="0.0">
+      <ImageView fx:id="imagemFundo" fitHeight="533.0" fitWidth="922.0" pickOnBounds="true" styleClass="imagem_fundo" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-17.0" AnchorPane.topAnchor="0.0">
          <image>
             <Image url="@fundo3.png" />
          </image>

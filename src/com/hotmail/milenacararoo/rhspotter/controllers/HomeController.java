@@ -31,6 +31,18 @@ public class HomeController {
 		panelErro.setVisible(false);
 	}
 	//-----------------------------------------------------------------------------------------------
+	/**
+	 * 													Panel câmera não conectada
+	 */
+	@FXML
+	AnchorPane panelCameraDesconectada;
+	public void cameraDesconectada(){
+		//Panel camera desativada
+		panelCameraDesconectada.setVisible(true);
+		//Panel imagens fornecidas pela camêra desativado
+		panelImagenDesativado.setVisible(false);
+		
+	}
 	/**********************************************************************
 	 * 										MENU INICIAL
 	 ***********************************************************************/
