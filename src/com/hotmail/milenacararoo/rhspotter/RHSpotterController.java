@@ -51,7 +51,7 @@ public class RHSpotterController extends Application {
 	@Override
 	public void start(Stage palco) throws Exception {
 		
-		URL arquivoFXML = getClass().getResource( "./fxml/home.fxml");
+		URL arquivoFXML = getClass().getResource( "fxml/home.fxml");
 		FXMLLoader loader = new FXMLLoader(arquivoFXML);
 		Parent fxmlParent = (Parent)loader.load();
 		
