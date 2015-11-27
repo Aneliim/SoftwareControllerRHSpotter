@@ -647,7 +647,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="panelRelizandoComunicacao" prefHeight="533.0" prefWidth="905.0" styleClass="menu_preto" visible="false" AnchorPane.bottomAnchor="-3.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="panelRelizandoComunicacao" prefHeight="533.0" prefWidth="905.0" styleClass="menu_preto" AnchorPane.bottomAnchor="-3.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <HBox alignment="CENTER" layoutX="-1.0" layoutY="94.0" prefHeight="348.0" prefWidth="910.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="94.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="94.0">
                <children>
@@ -687,21 +687,29 @@
                         <AnchorPane prefHeight="160.0" prefWidth="501.0" styleClass="panel_branco">
                            <children>
                               <AnchorPane layoutX="300.0" layoutY="94.0" prefHeight="105.0" prefWidth="47.0" styleClass="panel_branco" />
-                              <Label layoutX="87.0" layoutY="73.0" text="Não foi possível realizar a comunicação.">
+                              <Label layoutX="91.0" layoutY="50.0" text="Não foi possível realizar a comunicação.">
                                  <font>
                                     <Font name="Segoe UI Bold" size="21.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="11.0" layoutY="61.0" text="" textFill="#fc4141">
+                              <Label layoutX="15.0" layoutY="38.0" text="" textFill="#fc4141">
                                  <font>
                                     <Font name="GLYPHICONS Halflings Regular" size="65.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="86.0" layoutY="100.0" text="Conecte a antena no seu despositivo.">
+                              <Label layoutX="90.0" layoutY="77.0" text="Conecte a antena no seu despositivo.">
                                  <font>
                                     <Font name="Segoe UI Bold" size="21.0" />
                                  </font>
                               </Label>
+                              <Button fx:id="btnTentarNovamente" layoutX="128.0" layoutY="133.0" mnemonicParsing="false" onMouseClicked="#realizarComunicacaoNovamente" styleClass="botao-ativo" text="Realizar Comunicação Novamente">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="14.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
                            </children>
                         </AnchorPane>
                      </children>

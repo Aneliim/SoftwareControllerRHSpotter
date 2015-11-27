@@ -14,12 +14,21 @@ public class HomeController {
 	AnchorPane panelRelizandoComunicacao;
 	public void realizandoComunicacao(){
 		panelRelizandoComunicacao.setVisible(true);
+		panelErro.setVisible(false);
 	}
 	//														Tela erro na comunicação
 	@FXML
 	AnchorPane panelErro;
 	public void erroComunicacao(){
 		panelErro.setVisible(true);
+		panelRelizandoComunicacao.setVisible(false);
+	}
+	@FXML
+	//																Botão da tela de erro "Realizar Comunicação Novamente"
+	Button btnTentarNovamente;
+	public void realizarComunicacaoNovamente(){
+		panelRelizandoComunicacao.setVisible(true);
+		panelErro.setVisible(false);
 	}
 	//-----------------------------------------------------------------------------------------------
 	/**********************************************************************
