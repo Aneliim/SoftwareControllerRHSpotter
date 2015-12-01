@@ -3,10 +3,16 @@ package com.hotmail.milenacararoo.rhspotter.controllers;
 import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
 public class HomeController {
+	/**--------------------------------------------------------------------------------------------
+	 * 											Tela para escolha de porta
+	 */
+	@FXML AnchorPane panelSelecionePorta;
+	@FXML ComboBox comboBoxSelecionePorta;
 	/**---------------------------------------------------------------------------------------------
 	 * 											Tela realizando comunicação com o robô
 	 * */
