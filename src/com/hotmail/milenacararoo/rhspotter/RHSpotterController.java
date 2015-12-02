@@ -2,27 +2,13 @@ package com.hotmail.milenacararoo.rhspotter;
 
 import java.net.URL;
 
-import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 import com.hotmail.milenacararoo.rhspotter.controllers.HomeController;
-import com.mechani.robotcontroller.Comunicacao;
 import com.mechani.robotcontroller.RHSpotter;
-import com.mechani.robotcontroller.communication.RequestCallback;
-import com.mechani.robotcontroller.communication.exceptions.ConnectionException;
-import com.mechani.robotcontroller.communication.exceptions.RobotError;
-
-
-
-
-
-
-
-
 /*-----------------------------------------*/
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;

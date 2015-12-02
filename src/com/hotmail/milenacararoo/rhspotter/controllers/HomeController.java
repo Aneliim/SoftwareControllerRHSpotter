@@ -59,18 +59,24 @@ public class HomeController {
 						public void success(RHSpotter rhspotter) {
 		
 							RHSpotterController.RHSPOTTER = rhspotter;
+							Platform.runLater(()->panelRelizandoComunicacao.setVisible(false));
 						}
 						
 						@Override
 						public void error(String message, RobotError error) {
+							System.out.println(message);
 							if(error == RobotError.ROBOT_CONNECTION){
 								
+								comunicacao.fechar();
 								Platform.runLater(()->home.erroComunicacao());
 									
 							}
 						}
 					});
 				} catch (ConnectionException e) {
+					e.printStackTrace();
+					comunicacao.fechar();
+					
 					Platform.runLater(()->home.erroComunicacao());
 				}
 			}
@@ -631,6 +637,7 @@ public class HomeController {
 			giraParaEsquerdaPressed();
 		} 
 		public void giraParaEsquerdaReleased(){ 
+			System.out.println("teste");
 			pararRobo();
 			
 		} 
