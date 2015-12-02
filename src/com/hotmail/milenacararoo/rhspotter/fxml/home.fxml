@@ -271,7 +271,9 @@
                      <children>
                         <AnchorPane maxHeight="169.0" maxWidth="203.0" minHeight="169.0" minWidth="121.0" prefHeight="169.0" prefWidth="137.0">
                            <children>
+
                               <Label layoutX="74.0" layoutY="50.0" text="" textFill="WHITE">
+
                                  <font>
                                     <Font name="GLYPHICONS Halflings Regular" size="57.0" />
                                  </font>
@@ -280,6 +282,7 @@
                                  </cursor>
                               </Label>
                               <Label layoutX="74.0" layoutY="104.0" text="" textFill="WHITE">
+
                                  <font>
                                     <Font name="GLYPHICONS Halflings Regular" size="57.0" />
                                  </font>
@@ -288,6 +291,7 @@
                                  </cursor>
                               </Label>
                               <Label layoutX="74.0" layoutY="-5.0" text="" textFill="WHITE">
+
                                  <font>
                                     <Font name="GLYPHICONS Halflings Regular" size="57.0" />
                                  </font>
@@ -310,6 +314,7 @@
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </Button>
+
                            </children>
                         </AnchorPane>
                      </children>
@@ -431,6 +436,7 @@
                               <Pane layoutX="3.0" layoutY="54.0" prefHeight="30.0" prefWidth="158.0" styleClass="panel-fundo-botao">
                                  <children>
                                     <Button fx:id="btnDesativarCamera" mnemonicParsing="false" onMouseClicked="#desativarCamera" prefHeight="29.0" prefWidth="79.0" styleClass="botao-inativo" text="Desativar" textFill="#787676">
+
                                        <font>
                                           <Font name="Segoe UI" size="14.0" />
                                        </font>
@@ -439,6 +445,7 @@
                                        </cursor>
                                     </Button>
                                     <Button fx:id="btnAtivarCamera" layoutX="79.0" mnemonicParsing="false" onMouseClicked="#ativarCamera" prefHeight="29.0" prefWidth="79.0" styleClass="botao-inativo" text="Ativar" textFill="WHITE" visible="false">
+
                                        <font>
                                           <Font name="Segoe UI" size="14.0" />
                                        </font>
@@ -913,5 +920,6 @@
             </HBox>
          </children>
       </AnchorPane>
+
    </children>
 </AnchorPane>

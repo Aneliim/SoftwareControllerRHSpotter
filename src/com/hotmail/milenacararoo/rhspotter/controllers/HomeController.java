@@ -37,7 +37,8 @@ public class HomeController {
 		panelErro.setVisible(false);
 	}
 	//														Tela erro na comunicação
-	@FXML AnchorPane panelErro;
+	@FXML
+	AnchorPane panelErro;
 	public void erroComunicacao(){
 		panelErro.setVisible(true);
 		panelRelizandoComunicacao.setVisible(false);
@@ -52,6 +53,7 @@ public class HomeController {
 	}
 	
 	/*Método usado acima para conectar*/
+
 	public void tentarConectar(){
 		HomeController home = this;
 		new Thread(new Runnable() {
@@ -60,6 +62,7 @@ public class HomeController {
 			public void run() {
 				Comunicacao comunicacao = new Comunicacao();
 				// abre o painel de carregamento para se conectar no robo
+
 				try {
 					comunicacao.iniciar(new RequestCallback() {
 						
@@ -68,14 +71,14 @@ public class HomeController {
 		
 							RHSpotterController.RHSPOTTER = rhspotter;
 							Platform.runLater(()->panelRelizandoComunicacao.setVisible(false));
+
 						}
 						
 						@Override
 						public void error(String message, RobotError error) {
-							System.out.println(message);
+
 							if(error == RobotError.ROBOT_CONNECTION){
 								
-								comunicacao.getPorta().closePort();
 								Platform.runLater(()->home.erroComunicacao());
 									
 							}
@@ -89,6 +92,20 @@ public class HomeController {
 				}
 			}
 		}).start();
+	}
+	
+	//-----------------------------------------------------------------------------------------------
+	/**
+	 * 													Panel câmera não conectada
+	 */
+	@FXML
+	AnchorPane panelCameraDesconectada;
+	public void cameraDesconectada(){
+		//Panel camera desativada
+		panelCameraDesconectada.setVisible(true);
+		//Panel imagens fornecidas pela camêra desativado
+		panelImagenDesativado.setVisible(false);
+		
 	}
 	/**********************************************************************
 	 * 										MENU INICIAL
@@ -156,6 +173,7 @@ public class HomeController {
 		
 		// PARA ATIVAR A LANTERNA
 		RHSpotterController.RHSPOTTER.setLanterna(true);
+
 	}
 
 	/* Método desativar */
@@ -165,6 +183,7 @@ public class HomeController {
 		
 		// PARA DESATIVAR A LANTERNA
 		RHSpotterController.RHSPOTTER.setLanterna(false);
+
 	}
 
 	/*-------------------------------------------------------------------------------------------------*/
@@ -182,6 +201,7 @@ public class HomeController {
 	/* Método ativar */
 	public void ativarCamera() {
 		/*Interface botão*/
+
 		btnDesativarCamera.setVisible(true);
 		btnAtivarCamera.setVisible(false);
 
@@ -198,14 +218,18 @@ public class HomeController {
 	}
 	
 	/* Método desativar */
-	
 	public void desativarCamera() {
 		btnAtivarCamera.setVisible(true);
 		btnDesativarCamera.setVisible(false);
 
-		//Panel camera desativada sendo mostrada
-		panelCameraDesconectada.setVisible(false);
-		panelImagenDesativado.setVisible(true);
+		// PARA DESATIVAR A CÂMERA
+		if(RHSpotterController.RHSPOTTER.getCamera() == null)
+			JOptionPane.showMessageDialog(null, "Não foi possível se conectar a câmera do robô...",
+					"Erro",
+					JOptionPane.ERROR_MESSAGE);
+		else
+			panelImagenDesativado.getChildren().add(RHSpotterController.RHSPOTTER.getCamera().generatePanel());
+			
 
 	}
 
@@ -290,11 +314,13 @@ public class HomeController {
 	/* Panel videos */
 	@FXML AnchorPane panelVideos;
 
+
 	/**
 	 * 									 ABRIR PANEL FOTOS 
 	 */
 	/* Botão */
-	@FXML AnchorPane btnAbrirPanelFotos;
+	@FXML
+	AnchorPane btnAbrirPanelFotos;
 
 	/* Método */
 	public void abrirPanelFotos() {
@@ -306,7 +332,8 @@ public class HomeController {
 	 * 											ABRIR PANEL VÍDEOS 
 	 */
 	/* Botão */
-	@FXML AnchorPane btnAbrirPanelVideos;
+	@FXML
+	AnchorPane btnAbrirPanelVideos;
 
 	/* Método */
 	public void abrirPanelVideos() {
@@ -322,9 +349,11 @@ public class HomeController {
 	 */
 
 	/* Botão */
-	@FXML Button btnVisualizaImagem;
+	@FXML
+	Button btnVisualizaImagem;
 	/* Panel */
-	@FXML AnchorPane panelVisualizaImagem;
+	@FXML
+	AnchorPane panelVisualizaImagem;
 
 	/* Método */
 	public void visualizaImagem() {
@@ -335,7 +364,8 @@ public class HomeController {
 	 *  								FECHAR VISUALIZAÇÃO IMAGEM 
 	* /
 	/* Botão */
-	@FXML AnchorPane btnFecharPanelImagem;
+	@FXML
+	AnchorPane btnFecharPanelImagem;
 
 	public void fecharPanelImagem() {
 		panelVisualizaImagem.setVisible(false);
@@ -444,6 +474,7 @@ public class HomeController {
 	 */
 	@FXML Button btnExcluirVideoNao;
 
+
 	/* Método */
 	public void excluirVideoNao() {
 		panelExcluirVideo.setVisible(false);
@@ -464,6 +495,7 @@ public class HomeController {
 	/* ON MOUSE PRESSED */
 	public void moveParaFrentePressed() {
 		RHSpotterController.RHSPOTTER.getMove().frente();
+
 	}
 
 	/**
@@ -477,14 +509,17 @@ public class HomeController {
 		RHSpotterController.RHSPOTTER.getMove().atras();
 	}
 	
+
 	/**
 	 * 													GIRA PARA DIREITA 
 	 */
 	/* Botão */
-	@FXML Button btnGiraParaDireitaRobo;
 
-	/*ON MOUSE PRESSED */
-	public void giraParaDireitaRoboPressed() {
+	@FXML
+	Label btnGiraParaDireitaRobo;
+
+	/* Método */
+	public void giraParaDiretaRobo() {
 		RHSpotterController.RHSPOTTER.getMove().girarDireita();
 	}
 
@@ -492,10 +527,12 @@ public class HomeController {
 	 * 												GIRA PARA ESQUERDA 
 	 */
 	/* Botão */
-	@FXML Button btnGiraParaEsquerdaRobo;
 
-	/*ON MOUSE PRESSED */
-	public void giraParaEsquerdaPressed() {
+	@FXML
+	Label btnGiraParaEsquerdaRobo;
+
+	/* Método */
+	public void giraParaEsquerdaRobo() {
 		RHSpotterController.RHSPOTTER.getMove().girarEsquerda();
 	}
 
@@ -503,13 +540,14 @@ public class HomeController {
 	 * 													PARAR O ROBÔ 
 	 */
 	/* Botão */
-	@FXML Button btnPararRobo;
 
-	/*ON MOUSE PRESSED E RELEASED*/
+	@FXML
+	Label btnPararRobo;
+
+	/* Método */
 	public void pararRobo() {
 		RHSpotterController.RHSPOTTER.getMove().parar();
 	}
-	
 
 	/******************************************************************/
 	
@@ -547,6 +585,7 @@ public class HomeController {
 					"Problema com a câmera", JOptionPane.ERROR_MESSAGE);
 		}
 	}
+
 	/**
 	 * 												MOVE PARA BAIXO 
 	 */
@@ -576,6 +615,7 @@ public class HomeController {
 					"A câmera esta desconectada", 
 					"Problema com a câmera", JOptionPane.ERROR_MESSAGE);
 		}
+
 	}
 
 	/******************************************************************/
@@ -583,7 +623,8 @@ public class HomeController {
 	 * 										TIRAR FOTOS E GRAVAR VÍDEOS 
 	 -------------------------------------------------------------------------------------*/
 	/* Botão */
-	@FXML Button btnCapturaImagens;
+	@FXML
+	Label btnCapturaImagens;
 
 	/**
 	 * 													TIRA FOTO 
