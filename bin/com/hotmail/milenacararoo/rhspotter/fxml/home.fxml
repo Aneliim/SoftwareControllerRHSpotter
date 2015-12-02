@@ -12,7 +12,28 @@
 
 <AnchorPane fx:id="anchorHome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="905.0" styleClass="menu_preto" stylesheets="@rhspotter_software.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hotmail.milenacararoo.rhspotter.controllers.HomeController">
    <children>
-      <AnchorPane fx:id="panelImagenDesativado" layoutX="10.0" layoutY="10.0" prefHeight="533.0" prefWidth="905.0" styleClass="menu_preto" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="panelCameraDesconectada" layoutX="10.0" layoutY="10.0" prefHeight="533.0" prefWidth="905.0" styleClass="menu_preto" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" layoutX="-1.0" layoutY="94.0" prefHeight="348.0" prefWidth="910.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="94.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="94.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="348.0" prefWidth="423.0" style="-fx-background-color: transparent;" styleClass="panel_branco">
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="1.0" layoutY="14.0" text="A câmera não está conectada." textFill="#fa4b5a">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="30.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="panelImagenDesativado" layoutX="10.0" layoutY="10.0" prefHeight="533.0" prefWidth="905.0" styleClass="menu_preto" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <HBox alignment="CENTER" layoutX="-1.0" layoutY="94.0" prefHeight="348.0" prefWidth="910.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="94.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="94.0">
                <children>
@@ -33,11 +54,6 @@
             </HBox>
          </children>
       </AnchorPane>
-      <ImageView fx:id="imagemFundo" fitHeight="533.0" fitWidth="922.0" pickOnBounds="true" preserveRatio="true" styleClass="imagem_fundo" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-17.0" AnchorPane.topAnchor="0.0">
-         <image>
-            <Image url="@fundo3.png" />
-         </image>
-      </ImageView>
       <AnchorPane fx:id="balaoMenu" layoutX="36.0" layoutY="40.0" prefHeight="275.0" prefWidth="236.0" AnchorPane.topAnchor="-19.0">
          <children>
             <Label layoutX="13.0" layoutY="15.0" prefHeight="248.0" prefWidth="210.0" text="(" textFill="#000000a7">
@@ -139,51 +155,105 @@
                      <children>
                         <AnchorPane maxHeight="169.0" maxWidth="203.0" minHeight="169.0" minWidth="203.0" prefHeight="169.0" prefWidth="203.0">
                            <children>
-                              <Label layoutX="83.0" layoutY="66.0" prefHeight="38.0" prefWidth="33.0" text="" textFill="WHITE">
-                                 <font>
-                                    <Font name="GLYPHICONS Halflings Regular" size="32.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="btnPararRobo" layoutX="74.0" layoutY="50.0" onKeyPressed="#btnPararPressed" onKeyReleased="#btnPararReleased" onKeyTyped="#btnPararTyped" onMouseDragged="#pararRobo" prefHeight="68.0" prefWidth="57.0" text="" textFill="WHITE">
-                                 <font>
-                                    <Font name="GLYPHICONS Halflings Regular" size="57.0" />
-                                 </font>
+                              <AnchorPane layoutX="73.0" layoutY="-2.0" prefHeight="68.0" prefWidth="36.0">
+                                 <children>
+                                    <Label prefHeight="59.0" prefWidth="57.0" text="" textFill="WHITE">
+                                       <font>
+                                          <Font name="GLYPHICONS Halflings Regular" size="57.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="btnMoveParaFrenteRobo" layoutX="-2.0" layoutY="5.0" mnemonicParsing="false" onMousePressed="#moveParaFrentePressed" onMouseReleased="#pararRobo" prefHeight="59.0" prefWidth="57.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="5.0">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="126.0" layoutY="51.0" prefHeight="68.0" prefWidth="47.0">
+                                 <children>
+                                    <Label text="" textFill="WHITE">
+                                       <font>
+                                          <Font name="GLYPHICONS Halflings Regular" size="57.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Button fx:id="btnGiraParaDireitaRobo" layoutY="6.0" mnemonicParsing="false" onMousePressed="#giraParaDireitaRoboPressed" onMouseReleased="#pararRobo" prefHeight="59.0" prefWidth="57.0" style="-fx-background-color: transparent;">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                 </children>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
-                              </Label>
-                              <Label fx:id="btnGiraParaDireitaRobo" layoutX="129.0" layoutY="51.0" onKeyPressed="#giraParaDireitaPressed" onKeyReleased="#giraParaDireitaReleased" onKeyTyped="#giraParaDireitaTyped" onMouseClicked="#giraParaDiretaRobo" text="" textFill="WHITE">
-                                 <font>
-                                    <Font name="GLYPHICONS Halflings Regular" size="57.0" />
-                                 </font>
+                              </AnchorPane>
+                              <AnchorPane layoutX="73.0" layoutY="104.0" prefHeight="68.0" prefWidth="36.0">
+                                 <children>
+                                    <Label prefHeight="68.0" prefWidth="57.0" text="" textFill="WHITE">
+                                       <font>
+                                          <Font name="GLYPHICONS Halflings Regular" size="57.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Button fx:id="btnMoveParaTrasRobo" layoutX="-2.0" layoutY="9.0" mnemonicParsing="false" onMousePressed="#moveParaTrasPressed" onMouseReleased="#pararRobo" prefHeight="59.0" prefWidth="57.0" style="-fx-background-color: transparent;">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                 </children>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
-                              </Label>
-                              <Label fx:id="btnGiraParaEsquerdaRobo" layoutX="14.0" layoutY="53.0" onKeyPressed="#giraParaEsquerdaPressed" onKeyReleased="#giraParaEsquerdaReleased" onKeyTyped="#giraParaEsquerdaTyped" onMouseClicked="#giraParaEsquerdaRobo" rotate="180.0" text="" textFill="WHITE">
-                                 <font>
-                                    <Font name="GLYPHICONS Halflings Regular" size="57.0" />
-                                 </font>
+                              </AnchorPane>
+                              <AnchorPane layoutX="14.0" layoutY="55.0" prefHeight="59.0" prefWidth="57.0">
+                                 <children>
+                                    <Label rotate="180.0" text="" textFill="WHITE">
+                                       <font>
+                                          <Font name="GLYPHICONS Halflings Regular" size="57.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Button fx:id="btnGiraParaEsquerdaRobo" layoutX="2.0" layoutY="2.0" mnemonicParsing="false" onMousePressed="#giraParaEsquerdaPressed" onMouseReleased="#pararRobo" prefHeight="59.0" prefWidth="57.0" style="-fx-background-color: transparent;">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                 </children>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
-                              </Label>
-                              <Label fx:id="btnMoveParaTrasRobo" layoutX="74.0" layoutY="104.0" onKeyPressed="#moveParaTrasPressed" onKeyReleased="#moveParaTrasReleased" onKeyTyped="#moveParaTrasTyped" onMouseClicked="#moveParaTrasRobo" text="" textFill="WHITE">
-                                 <font>
-                                    <Font name="GLYPHICONS Halflings Regular" size="57.0" />
-                                 </font>
+                              </AnchorPane>
+                              <AnchorPane layoutX="72.0" layoutY="51.0" prefHeight="68.0" prefWidth="57.0">
+                                 <children>
+                                    <Label layoutX="9.0" layoutY="16.0" prefHeight="39.0" prefWidth="36.0" text="" textFill="WHITE">
+                                       <font>
+                                          <Font name="GLYPHICONS Halflings Regular" size="32.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="68.0" prefWidth="57.0" text="" textFill="WHITE">
+                                       <font>
+                                          <Font name="GLYPHICONS Halflings Regular" size="57.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Button fx:id="btnPararRobo" layoutX="-1.0" layoutY="7.0" mnemonicParsing="false" onMousePressed="#pararRobo" onMouseReleased="#pararRobo" prefHeight="59.0" prefWidth="57.0" style="-fx-background-color: transparent;">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                 </children>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
-                              </Label>
-                              <Label fx:id="btnMoveParaFrenteRobo" layoutX="74.0" layoutY="-5.0" onKeyPressed="#moveParaFrentePressed" onKeyReleased="#moveParaFrenterReleased" onKeyTyped="#moveParaFrenteTyped" onMouseClicked="#moveParaFrenteRobo" text="" textFill="WHITE">
-                                 <font>
-                                    <Font name="GLYPHICONS Halflings Regular" size="57.0" />
-                                 </font>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </Label>
+                              </AnchorPane>
                            </children>
                         </AnchorPane>
                      </children>
@@ -201,7 +271,7 @@
                      <children>
                         <AnchorPane maxHeight="169.0" maxWidth="203.0" minHeight="169.0" minWidth="121.0" prefHeight="169.0" prefWidth="137.0">
                            <children>
-                              <Label fx:id="btnCapturaImagens" layoutX="74.0" layoutY="50.0" onKeyPressed="#capturaImagensPressed" onKeyReleased="#capturaImagensReleased" onKeyTyped="#capturaImagensTyped" onMouseClicked="#tiraFoto" onMousePressed="#gravaVideo" text="" textFill="WHITE">
+                              <Label layoutX="74.0" layoutY="50.0" text="" textFill="WHITE">
                                  <font>
                                     <Font name="GLYPHICONS Halflings Regular" size="57.0" />
                                  </font>
@@ -209,7 +279,7 @@
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </Label>
-                              <Label fx:id="btnMoveParaBaixoCamera" layoutX="74.0" layoutY="104.0" onKeyPressed="#moveParaBaixoPressed" onKeyReleased="#moveParaBaixoReleased" onKeyTyped="#moveParaBaixoTyped" onMouseClicked="#moveParaBaixoCamera" text="" textFill="WHITE">
+                              <Label layoutX="74.0" layoutY="104.0" text="" textFill="WHITE">
                                  <font>
                                     <Font name="GLYPHICONS Halflings Regular" size="57.0" />
                                  </font>
@@ -217,7 +287,7 @@
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </Label>
-                              <Label fx:id="btnMoveParaCimaCamera" layoutX="74.0" layoutY="-5.0" onKeyPressed="#moveParaCimaPressed" onKeyReleased="#moveParaCimaReleased" onKeyTyped="#moveParaCimaTyped" onMouseClicked="#moveParaCimaCamera" text="" textFill="WHITE">
+                              <Label layoutX="74.0" layoutY="-5.0" text="" textFill="WHITE">
                                  <font>
                                     <Font name="GLYPHICONS Halflings Regular" size="57.0" />
                                  </font>
@@ -225,6 +295,21 @@
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </Label>
+                              <Button fx:id="btnMoveParaCimaCamera" layoutX="74.0" layoutY="-2.0" mnemonicParsing="false" onMousePressed="#moveParaCimaPressed" onMouseReleased="#moveParaCimaReleased" prefHeight="59.0" prefWidth="57.0" style="-fx-background-color: transparent;">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="btnCapturaImagens" layoutX="74.0" layoutY="54.0" mnemonicParsing="false" onMouseReleased="#pararRobo" prefHeight="59.0" prefWidth="57.0" style="-fx-background-color: transparent;">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="btnMoveParaBaixoCamera" layoutX="74.0" layoutY="111.0" mnemonicParsing="false" onMousePressed="#moveParaBaixoPressed" onMouseReleased="#moveParaBaixoReleased" prefHeight="59.0" prefWidth="57.0" style="-fx-background-color: transparent;">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
                            </children>
                         </AnchorPane>
                      </children>
@@ -345,7 +430,7 @@
                               </Label>
                               <Pane layoutX="3.0" layoutY="54.0" prefHeight="30.0" prefWidth="158.0" styleClass="panel-fundo-botao">
                                  <children>
-                                    <Button fx:id="btnDesativarCamera" mnemonicParsing="false" onMouseClicked="#desativarCamera" prefHeight="29.0" prefWidth="79.0" styleClass="botao-desativo" text="Desativar" textFill="WHITE">
+                                    <Button fx:id="btnDesativarCamera" mnemonicParsing="false" onMouseClicked="#desativarCamera" prefHeight="29.0" prefWidth="79.0" styleClass="botao-inativo" text="Desativar" textFill="#787676">
                                        <font>
                                           <Font name="Segoe UI" size="14.0" />
                                        </font>
@@ -353,7 +438,7 @@
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
                                     </Button>
-                                    <Button fx:id="btnAtivarCamera" layoutX="79.0" mnemonicParsing="false" onMouseClicked="#ativarCamera" prefHeight="29.0" prefWidth="79.0" styleClass="botao-ativo" text="Ativar" textFill="WHITE" visible="false">
+                                    <Button fx:id="btnAtivarCamera" layoutX="79.0" mnemonicParsing="false" onMouseClicked="#ativarCamera" prefHeight="29.0" prefWidth="79.0" styleClass="botao-inativo" text="Ativar" textFill="WHITE" visible="false">
                                        <font>
                                           <Font name="Segoe UI" size="14.0" />
                                        </font>
@@ -647,7 +732,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="panelRelizandoComunicacao" prefHeight="533.0" prefWidth="905.0" styleClass="menu_preto" visible="false" AnchorPane.bottomAnchor="-3.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="panelRelizandoComunicacao" prefHeight="533.0" prefWidth="905.0" styleClass="menu_preto" AnchorPane.bottomAnchor="-3.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <HBox alignment="CENTER" layoutX="-1.0" layoutY="94.0" prefHeight="348.0" prefWidth="910.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="94.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="94.0">
                <children>
@@ -687,21 +772,29 @@
                         <AnchorPane prefHeight="160.0" prefWidth="501.0" styleClass="panel_branco">
                            <children>
                               <AnchorPane layoutX="300.0" layoutY="94.0" prefHeight="105.0" prefWidth="47.0" styleClass="panel_branco" />
-                              <Label layoutX="87.0" layoutY="73.0" text="Não foi possível realizar a comunicação.">
+                              <Label layoutX="91.0" layoutY="50.0" text="Não foi possível realizar a comunicação.">
                                  <font>
                                     <Font name="Segoe UI Bold" size="21.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="11.0" layoutY="61.0" text="" textFill="#fc4141">
+                              <Label layoutX="15.0" layoutY="38.0" text="" textFill="#fc4141">
                                  <font>
                                     <Font name="GLYPHICONS Halflings Regular" size="65.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="86.0" layoutY="100.0" text="Conecte a antena no seu despositivo.">
+                              <Label layoutX="90.0" layoutY="77.0" text="Conecte a antena no seu despositivo.">
                                  <font>
                                     <Font name="Segoe UI Bold" size="21.0" />
                                  </font>
                               </Label>
+                              <Button fx:id="btnTentarNovamente" layoutX="128.0" layoutY="133.0" mnemonicParsing="false" onMouseClicked="#realizarComunicacaoNovamente" styleClass="botao-ativo" text="Realizar Comunicação Novamente">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="14.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
                            </children>
                         </AnchorPane>
                      </children>
@@ -786,6 +879,32 @@
                                     <Font name="Segoe UI" size="14.0" />
                                  </font>
                               </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="panelSelecionarPorta" layoutX="10.0" layoutY="10.0" prefHeight="533.0" prefWidth="905.0" styleClass="menu_preto" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" layoutX="-1.0" layoutY="94.0" prefHeight="348.0" prefWidth="910.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="94.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="94.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="348.0" prefWidth="423.0" style="-fx-background-color: transparent;" styleClass="panel_branco">
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="panel_branco">
+                           <children>
+                              <Label layoutX="14.0" layoutY="87.0" text="Selecione uma porta:">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="21.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="comboBoxSelecionePorta" layoutX="230.0" layoutY="87.0" prefWidth="150.0" promptText="Selecione" styleClass="botao-ajuste">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ComboBox>
                            </children>
                         </AnchorPane>
                      </children>

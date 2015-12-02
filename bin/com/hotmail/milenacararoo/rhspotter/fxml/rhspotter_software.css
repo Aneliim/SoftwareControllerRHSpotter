@@ -80,3 +80,11 @@
 .fundo-sem-imagem{
 	-fx-background-color: 		#000000b5;
 }
+/***************************************************************/
+.tranparente-button{
+	-fx-background-color: 		#FFFFFF29;
+}
+.botao-inativo{
+	-fx-background-color: 		##787676;
+	-fx-background-radius: 		10;
+}
