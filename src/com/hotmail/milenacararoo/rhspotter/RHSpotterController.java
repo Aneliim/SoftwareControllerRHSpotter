@@ -6,9 +6,10 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 import com.hotmail.milenacararoo.rhspotter.controllers.HomeController;
-import com.mechani.robotcontroller.RHSpotter;
+
 /*-----------------------------------------*/
 import javafx.application.Application;
+import com.mechani.robotcontroller.RHSpotter;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
